@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mini Text Adventure — Feng's Lab</title>
+<style>
+  body{font-family: Arial, Helvetica, sans-serif;background:#f8fbff;color:#08366a;padding:24px}
+  .box{max-width:720px;margin:0 auto;background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(10,25,47,0.06)}
+  button{background:#0b63d6;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+  .choices{margin-top:12px}
+</style>
+</head>
+<body>
+<div class="box">
+  <h2>迷你文字冒险 / Mini Text Adventure</h2>
+  <div id="log" style="white-space:pre-wrap;margin-top:12px"></div>
+  <div class="choices" id="choices"></div>
+  <div style="margin-top:12px"><button id="restart">重新开始 / Restart</button></div>
+</div>
+<script>
+const states = {
+  start: {
+    text: "你醒来在一个陌生的工作室里，桌上有一台电脑和一个打开的 Blender 文件。\nYou wake up in a strange studio. There is a computer with an open Blender file.",
+    choices: [{t:"查看电脑 / Check computer", s:"pc"}, {t:"离开房间 / Leave", s:"leave"}]
+  },
+  pc: {
+    text: "电脑里有一封未读邮件，主题是“合作项目”。\nThere is an unread email titled 'Collab Project'.",
+    choices: [{t:"打开邮件 / Open email", s:"open_email"}, {t:"关闭电脑 / Close computer", s:"close_pc"}]
+  },
+  open_email: {
+    text: "邮件中有提示：尝试使用 AI 配音为短片配声音。\nThe email suggests trying AI voice for a short clip.",
+    choices: [{t:"尝试配音 / Try audio", s:"audio"}, {t:"忽略 / Ignore", s:"ignore"}]
+  },
+  audio: {
+    text: "你成功生成一个示例配音，项目进展顺利。游戏结束（成功结局）。\nYou generate a sample voice. Project succeeds. The End.",
+    choices: []
+  },
+  close_pc: {
+    text: "你关掉电脑，走出门外，外面是一个安静的街区。\nYou close the computer and step outside to a quiet neighborhood.",
+    choices: [{t:"回去 / Go back", s:"start"}]
+  },
+  leave: {
+    text: "门锁着，你无法离开。\nThe door is locked; you cannot leave.",
+    choices: [{t:"回去 / Go back", s:"start"}]
+  },
+  ignore: {
+    text: "你忽略了邮件，错失了机会。游戏结束（中立结局）。\nYou ignore the email and miss the opportunity. The End.",
+    choices: []
+  }
+};
+
+let current = 'start';
+const logEl = document.getElementById('log');
+const choicesEl = document.getElementById('choices');
+
+function render() {
+  const state = states[current];
+  logEl.textContent = state.text;
+  choicesEl.innerHTML = '';
+  if(state.choices.length===0){
+    const p = document.createElement('div');
+    p.textContent = "\n--- 游戏到此结束 / The game ends here ---";
+    choicesEl.appendChild(p);
+  } else {
+    state.choices.forEach(c=>{
+      const btn = document.createElement('button');
+      btn.textContent = c.t;
+      btn.style.marginRight = '8px';
+      btn.onclick = ()=>{ current = c.s; render(); };
+      choicesEl.appendChild(btn);
+    });
+  }
+}
+
+document.getElementById('restart').onclick = ()=>{ current='start'; render(); };
+render();
+</script>
+</body>
+</html>

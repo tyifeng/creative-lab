@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feng's Creative Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    .accent { color: #0b63d6; }
+    .card { background: white; border-radius: 12px; box-shadow: 0 6px 18px rgba(10,25,47,0.06); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-sky-50 to-white text-slate-800">
+  <header class="max-w-4xl mx-auto py-8 px-6 flex items-center justify-between">
+    <div>
+      <a href="index.html" class="text-2xl font-semibold accent">Feng's Creative Lab</a>
+      <div class="text-sm text-slate-600">记录我在 AI 与 Blender 世界的探索 · Documenting my AI & Blender journey</div>
+    </div>
+    <nav class="space-x-4 text-slate-700">
+      <a href="index.html">首页 / Home</a>
+      <a href="blender-log.html">Blender 日志 / Log</a>
+      <a href="ai-gallery.html">作品 / Gallery</a>
+      <a href="ai-audio.html">配音 / Audio</a>
+      <a href="games.html">文字游戏 / Games</a>
+      <a href="about.html">关于 / About</a>
+    </nav>
+  </header>
+  <main class="max-w-4xl mx-auto px-6 pb-16">
+    <section class="card p-6 mb-6">
+      <h2 class="text-xl font-semibold accent">Blender 学习日志 / Blender Log</h2>
+      <p class="mt-3 text-slate-700">按项目记录你的建模、贴图、绑定与渲染心得，每条可扩展为独立页面。 / Record modeling, texturing, rigging, and rendering notes by project.</p>
+    </section>
+
+    <section class="space-y-4">
+      <article class="card p-4">
+        <h3 class="font-semibold">Project: Simple Chair — 2025-10-10</h3>
+        <p class="text-slate-700 mt-2">今天实践了椅子建模，使用布尔工具和 Bevel 优化边缘。遇到的问题：法线翻转，解决方法：Recalculate Normals。 / Modeled a simple chair using boolean and bevel; fixed normals with Recalculate Normals.</p>
+      </article>
+
+      <article class="card p-4">
+        <h3 class="font-semibold">Project: Low-poly Character — 2025-10-08</h3>
+        <p class="text-slate-700 mt-2">练习低模角色拓扑，使用镜像与遮挡优化。下次计划：UV 展开与烘焙基础。 / Practiced low-poly character topology; next: UV unwrap and bake basics.</p>
+      </article>
+    </section>
+  </main>
+  <footer class="max-w-4xl mx-auto px-6 py-6 text-sm text-slate-500">© Feng's Creative Lab · Contact: your-email@example.com</footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feng's Creative Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    .accent { color: #0b63d6; }
+    .card { background: white; border-radius: 12px; box-shadow: 0 6px 18px rgba(10,25,47,0.06); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-sky-50 to-white text-slate-800">
+  <header class="max-w-4xl mx-auto py-8 px-6 flex items-center justify-between">
+    <div>
+      <a href="index.html" class="text-2xl font-semibold accent">Feng's Creative Lab</a>
+      <div class="text-sm text-slate-600">记录我在 AI 与 Blender 世界的探索 · Documenting my AI & Blender journey</div>
+    </div>
+    <nav class="space-x-4 text-slate-700">
+      <a href="index.html">首页 / Home</a>
+      <a href="blender-log.html">Blender 日志 / Log</a>
+      <a href="ai-gallery.html">作品 / Gallery</a>
+      <a href="ai-audio.html">配音 / Audio</a>
+      <a href="games.html">文字游戏 / Games</a>
+      <a href="about.html">关于 / About</a>
+    </nav>
+  </header>
+  <main class="max-w-4xl mx-auto px-6 pb-16">
+    <section class="card p-6 mb-6">
+      <h2 class="text-xl font-semibold accent">欢迎 / Welcome</h2>
+      <p class="mt-3 text-slate-700">这里是 Feng's Creative Lab。记录 Blender 建模练习、展示 AI 图片/动画、以及小型互动文字游戏。 / This is Feng's Creative Lab. Document Blender practice, show AI images/animations, and play small text games.</p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <a class="card p-4 hover:shadow-md" href="blender-log.html">
+        <h3 class="font-semibold">Blender 学习日志 / Blender Log</h3>
+        <p class="text-sm text-slate-600 mt-2">按项目记录建模、渲染与遇到的问题。/ Project-based notes on modeling, rendering and issues.</p>
+      </a>
+      <a class="card p-4 hover:shadow-md" href="ai-gallery.html">
+        <h3 class="font-semibold">AI 图片与动画 / AI Gallery</h3>
+        <p class="text-sm text-slate-600 mt-2">展示 AI 生成的图片和小动画示例。 / Showcase AI-generated images and small animations.</p>
+      </a>
+      <a class="card p-4 hover:shadow-md" href="ai-audio.html">
+        <h3 class="font-semibold">AI 配音 / AI Audio</h3>
+        <p class="text-sm text-slate-600 mt-2">上传并播放你生成的 AI 人声配音文件。 / Upload and play AI voice files.</p>
+      </a>
+      <a class="card p-4 hover:shadow-md" href="games.html">
+        <h3 class="font-semibold">互动文字游戏 / Text Games</h3>
+        <p class="text-sm text-slate-600 mt-2">简单的 HTML5 文字冒险，可直接在浏览器玩。 / Simple HTML5 text adventure playable in browser.</p>
+      </a>
+    </section>
+
+    <section class="mt-8 card p-6">
+      <h3 class="font-semibold">最近更新 / Recent Updates</h3>
+      <ul class="mt-3 space-y-2 text-slate-700">
+        <li>2025-10-11 — 新增示例文字游戏 / Added example text game</li>
+        <li>2025-10-11 — 上传示例动画与配音 / Uploaded sample animation and audio</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="max-w-4xl mx-auto px-6 py-6 text-sm text-slate-500">© Feng's Creative Lab · 联系 / Contact: your-email@example.com</footer>
+</body>
+</html>
