@@ -8,7 +8,7 @@
     <style>
         .gallery-container {
             max-width: 1200px;
-            margin: 80px auto 2rem; /* 增加上边距避免被导航栏遮挡 */
+            margin: 80px auto 2rem;
             padding: 2rem;
         }
         
@@ -51,7 +51,12 @@
             width: 100%;
             height: 250px;
             object-fit: cover;
-            display: block; /* 确保图片正确显示 */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
         }
         
         .image-info {
@@ -62,12 +67,81 @@
             font-weight: 600;
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
+            color: var(--text-color);
         }
         
         .image-desc {
             color: #666;
             font-size: 0.9rem;
             line-height: 1.5;
+        }
+
+        /* 图片模态框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #ccc;
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            padding: 10px;
+            background: rgba(0,0,0,0.7);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .zoom-hint {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #ccc;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -87,82 +161,87 @@
         <div class="gallery-grid">
             <!-- 作品1 -->
             <div class="gallery-item">
-                <img src="images/00000-1-1.png" alt="梦幻少女角色设计">
-                <div class="image-info">
-                    <div class="image-title">梦幻少女</div>
-                    <div class="image-desc">使用Midjourney生成，提示词：anime girl, fantasy style</div>
-                </div>
-            </div>
-            
-            <!-- 作品2 -->
-            <div class="gallery-item">
-                <img src="images/00000-1-1.png" alt="动漫角色设计">
-                <div class="image-info">
-                    <div class="image-title">动漫角色设计</div>
-                    <div class="image-desc">Stable Diffusion创作，风格：日系动漫</div>
-                </div>
-            </div>
-
-            <!-- 作品3 - 占位符 -->
-            <div class="gallery-item">
-                <img src="images/00000-1-2.png" alt=" ">
+                <img src="images/00000-1-1.png" alt=" " 
+                     data-title=" " 
+                     data-desc=" ">
                 <div class="image-info">
                     <div class="image-title"> </div>
                     <div class="image-desc"> </div>
                 </div>
             </div>
-               
-                
-
-            <!-- 作品4 - 占位符 -->
+            
+            <!-- 作品2 -->
             <div class="gallery-item">
-                <div style="width: 100%; height: 250px; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                    🖼️ 等待上传图片
-                </div>
+                <img src="images/00000-1-2.png" alt=" " 
+                     data-title=" " 
+                     data-desc=" ">
                 <div class="image-info">
-                    <div class="image-title">更多作品</div>
-                    <div class="image-desc">持续创作中...</div>
+                    <div class="image-title"> </div>
+                    <div class="image-desc"> </div>
                 </div>
             </div>
 
-            <!-- 作品5 - 占位符 -->
-            <div class="gallery-item">
-                <div style="width: 100%; height: 250px; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                    🖼️ 等待上传图片
-                </div>
-                <div class="image-info">
-                    <div class="image-title">更多作品</div>
-                    <div class="image-desc">持续创作中...</div>
-                </div>
-            </div>
-
-             <!-- 作品6 - 占位符 -->
-            <div class="gallery-item">
-                <div style="width: 100%; height: 250px; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                    🖼️ 等待上传图片
-                </div>
-                <div class="image-info">
-                    <div class="image-title">更多作品</div>
-                    <div class="image-desc">持续创作中...</div>
-                </div>
-            </div>
-
-            <!-- 作品7 - 占位符 -->
-            <div class="gallery-item">
-                <div style="width: 100%; height: 250px; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                    🖼️ 等待上传图片
-                </div>
-                <div class="image-info">
-                    <div class="image-title">更多作品</div>
-                    <div class="image-desc">持续创作中...</div>
-                </div>
-            </div>
+            <!-- 更多作品... -->
         </div>
         
         <div style="margin-top: 3rem; padding: 2rem; background: var(--light-blue); border-radius: 12px;">
             <h3>📝 创作笔记</h3>
-            <p>正在学习如何更好地控制AI生成的人物表情、姿势和服装风格。目前已经上传了2张作品，其余作品正在创作中...</p>
+            <p>正在学习如何更好地控制AI生成的人物表情、姿势和服装风格...</p>
         </div>
     </div>
+
+    <!-- 图片模态框 -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="zoom-hint">💡 点击图片外区域或按ESC键关闭</div>
+        <div id="modalCaption" class="image-caption"></div>
+    </div>
+
+    <script>
+        // 获取模态框元素
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const captionText = document.getElementById("modalCaption");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        // 为所有图片添加点击事件
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+                
+                // 显示图片标题和描述
+                const title = this.getAttribute('data-title') || this.alt;
+                const desc = this.getAttribute('data-desc') || '';
+                captionText.innerHTML = `<strong>${title}</strong><br>${desc}`;
+            });
+        });
+
+        // 点击关闭按钮
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+
+        // 点击模态框背景关闭
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // 按ESC键关闭
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                modal.style.display = "none";
+            }
+        });
+
+        // 阻止模态框内容点击时关闭
+        modalImg.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    </script>
 </body>
 </html>
