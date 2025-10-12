@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒险故事 - 文字游戏</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .game-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .game-embed {
+            width: 100%;
+            height: 600px;
+            border: 2px solid var(--primary-color);
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .game-info {
+            background: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">Creative Lab</a>
+        </div>
+    </nav>
 
+    <div class="game-container">
+        <a href="../../index.html#dashboard" class="back-button">← 返回主面板</a>
+        
+        <h1>🗺️ 冒险故事文字游戏</h1>
+        <p>一个基于Twine制作的互动冒险故事，你的选择将决定故事的走向</p>
+        
+        <!-- Twine游戏嵌入区域 -->
+        <div class="game-embed">
+            <!-- 这里嵌入Twine游戏 -->
+            <iframe src="games/adventure-game.html" width="100%" height="100%" style="border: none; border-radius: 10px;"></iframe>
+        </div>
+        
+        <div class="game-info">
+            <h3>🎮 游戏说明</h3>
+            <p>这是一个分支叙事游戏，包含多个结局。探索神秘的世界，做出明智的选择！</p>
+            <ul>
+                <li>使用鼠标点击选择故事分支</li>
+                <li>多个隐藏结局等待发现</li>
+                <li>游戏时长：约15-30分钟</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
