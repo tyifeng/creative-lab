@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频作品 - AI配音</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .audio-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .audio-player {
+            background: var(--light-blue);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+        
+        .audio-item {
+            margin-bottom: 2rem;
+        }
+        
+        audio {
+            width: 100%;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">Creative Lab</a>
+        </div>
+    </nav>
+
+    <div class="audio-container">
+        <a href="../../index.html#dashboard" class="back-button">← 返回主面板</a>
+        
+        <h1>🎤 AI配音作品集</h1>
+        <p>使用AI语音合成技术创作的配音作品</p>
+        
+        <div class="audio-player">
+            <!-- 音频作品1 -->
+            <div class="audio-item">
+                <h3>情感朗读 - 诗歌</h3>
+                <p>使用ElevenLabs生成的情感化语音</p>
+                <audio controls>
+                    <source src="audio/配音1.mp3" type="audio/mpeg">
+                    您的浏览器不支持音频播放
+                </audio>
+            </div>
+            
+            <!-- 音频作品2 -->
+            <div class="audio-item">
+                <h3>角色配音 - 故事叙述</h3>
+                <p>多角色对话配音尝试</p>
+                <audio controls>
+                    <source src="audio/配音2.wav" type="audio/wav">
+                    您的浏览器不支持音频播放
+                </audio>
+            </div>
+            
+            <!-- 更多音频作品... -->
+        </div>
+    </div>
+</body>
+</html>
