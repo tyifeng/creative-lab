@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字游戏库 - Creative Lab</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .library-container {
+            max-width: 1200px;
+            margin: 80px auto 2rem;
+            padding: 2rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+        }
+        
+        .back-button:hover {
+            background: var(--light-blue);
+            text-decoration: none;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .game-card {
+            background: var(--light-blue);
+            border: 2px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        
+        .game-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .game-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .game-desc {
+            color: #666;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .game-stats {
+            display: flex;
+            justify-content: space-around;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">Creative Lab</a>
+        </div>
+    </nav>
+
+    <div class="library-container">
+        <a href="../../index.html#dashboard" class="back-button">← 返回主面板</a>
+        
+        <h1>📚 文字游戏库</h1>
+        <p>这里收藏了我制作的所有互动文字游戏，点击任意游戏开始游玩</p>
+        
+        <div class="games-grid">
+            <!-- 游戏1 -->
+            <a href="lost-bell-tower.html" class="game-card">
+                <div class="game-icon">🔔</div>
+                <div class="game-title">失落的钟楼</div>
+                <div class="game-desc">探索神秘的古钟楼，揭开隐藏的秘密</div>
+                <div class="game-stats">
+                    <div class="stat">⏱️ 15-30分钟</div>
+                    <div class="stat">🎯 5个结局</div>
+                    <div class="stat">🔍 解谜</div>
+                </div>
+            </a>
+            
+            <!-- 游戏2 -->
+            <a href="space-station.html" class="game-card">
+                <div class="game-icon">🚀</div>
+                <div class="game-title">太空站危机</div>
+                <div class="game-desc">在外太空生存，做出关键决策</div>
+                <div class="game-stats">
+                    <div class="stat">⏱️ 20-40分钟</div>
+                    <div class="stat">🎯 7个结局</div>
+                    <div class="stat">🌌 科幻</div>
+                </div>
+            </a>
+            
+            <!-- 游戏3 -->
+            <a href="detective-case.html" class="game-card">
+                <div class="game-icon">🕵️</div>
+                <div class="game-title">侦探档案</div>
+                <div class="game-desc">破解悬疑案件，找出真凶</div>
+                <div class="game-stats">
+                    <div class="stat">⏱️ 25-45分钟</div>
+                    <div class="stat">🎯 6个结局</div>
+                    <div class="stat">🔎 推理</div>
+                </div>
+            </a>
+            
+            <!-- 游戏4 -->
+            <a href="fantasy-quest.html" class="game-card">
+                <div class="game-icon">⚔️</div>
+                <div class="game-title">奇幻冒险</div>
+                <div class="game-desc">在魔法世界中展开史诗旅程</div>
+                <div class="game-stats">
+                    <div class="stat">⏱️ 30-50分钟</div>
+                    <div class="stat">🎯 8个结局</div>
+                    <div class="stat">🧙 奇幻</div>
+                </div>
+            </a>
+            
+            <!-- 游戏5 -->
+            <a href="time-travel.html" class="game-card">
+                <div class="game-icon">⏰</div>
+                <div class="game-title">时间旅行者</div>
+                <div class="game-desc">穿越时空，改变历史进程</div>
+                <div class="game-stats">
+                    <div class="stat">⏱️ 35-55分钟</div>
+                    <div class="stat">🎯 10个结局</div>
+                    <div class="stat">🌀 科幻</div>
+                </div>
+            </a>
+            
+            <!-- 游戏6 - 空位，用于未来添加 -->
+            <a href="coming-soon.html" class="game-card" style="opacity: 0.7;">
+                <div class="game-icon">🔮</div>
+                <div class="game-title">新游戏制作中</div>
+                <div class="game-desc">敬请期待...</div>
+                <div class="game-stats">
+                    <div class="stat">⏱️ 即将发布</div>
+                    <div class="stat">🎯 制作中</div>
+                    <div class="stat">✨ 全新</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
