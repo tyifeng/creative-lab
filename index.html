@@ -1,143 +1,120 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Feng Creative Lab - 作品与学习日志</title>
-  <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-    header {
-      background-color: #1a1a1a;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-    nav {
-      margin-top: 0.5rem;
-    }
-    nav button {
-      background: #444;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin: 0 0.3rem;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    nav button:hover {
-      background: #666;
-    }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-top: 1rem;
-    }
-    h2 {
-      margin-top: 1.5rem;
-      font-size: 1.4rem;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.3rem;
-    }
-    audio {
-      width: 100%;
-      margin-top: 0.5rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Lab - 我的创意探索</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1 id="site-title">Feng 创意实验室</h1>
-    <nav>
-      <button onclick="setLang('zh')">中文</button>
-      <button onclick="setLang('en')">English</button>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Creative Lab</h1>
+            <ul class="nav-menu">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#projects">作品</a></li>
+                <li><a href="#about">关于</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
 
-  <main>
-    <!-- 简介 -->
-    <section>
-      <p id="intro-text">
-        欢迎来到我的个人创作网站，这里记录我使用 Blender 的建模学习历程，展示我的 AI 作品、配音和互动内容。
-      </p>
+    <!-- 英雄区域 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>创意实验室</h2>
+            <p>探索AI绘画、AI配音、文字游戏与Blender建模的无限可能</p>
+            <p class="hero-subtitle">记录每一个创意火花</p>
+        </div>
     </section>
 
-    <!-- AI 作品展示 -->
-    <section>
-      <h2 id="section-art-title">🎨 AI 图片作品</h2>
-      <img src="assets/sample-ai-art.png" alt="AI 作品示例">
-      <p id="section-art-desc">
-        这是一张我用 AI 生成的实验性图片，用于测试网站展示效果。
-      </p>
+    <!-- 作品展示区 -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">我的创作方向</h2>
+            
+            <!-- AI绘画 -->
+            <div class="project-category">
+                <h3>🎨 AI绘画探索</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-image">图片位置</div>
+                        <div class="project-content">
+                            <h4>作品标题</h4>
+                            <p>使用工具：Midjourney / Stable Diffusion</p>
+                            <p>创作理念简介...</p>
+                        </div>
+                    </div>
+                    <!-- 可以复制这个card来添加更多作品 -->
+                </div>
+            </div>
+
+            <!-- AI配音 -->
+            <div class="project-category">
+                <h3>🎤 AI配音实验</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-audio">
+                            <p>音频播放器位置</p>
+                        </div>
+                        <div class="project-content">
+                            <h4>配音作品标题</h4>
+                            <p>使用工具：ElevenLabs / 剪映</p>
+                            <p>声音风格描述...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 文字游戏 -->
+            <div class="project-category">
+                <h3>📖 文字游戏制作</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h4>游戏名称</h4>
+                            <p>使用工具：Twine / Inklewriter</p>
+                            <p>游戏简介和玩法...</p>
+                            <a href="#" class="project-link">试玩游戏</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blender建模 -->
+            <div class="project-category">
+                <h3>💎 Blender建模</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-image">3D模型截图</div>
+                        <div class="project-content">
+                            <h4>模型名称</h4>
+                            <p>建模技巧学习记录...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- 学习日志 -->
-    <section>
-      <h2 id="section-log-title">📚 Blender 学习日志</h2>
-      <p id="section-log-content">
-        2025/10/12：已经学了十几天动画人物建模了,可以把整体人物大概建模出来了,就是头发部分还没开始.
-      </p>
+    <!-- 关于我 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">关于这个实验室</h2>
+            <div class="about-content">
+                <p>这里记录我在数字创意领域的探索历程。每个方向都是新的挑战，每个作品都是成长的见证。</p>
+                <p><strong>探索中学习，创作中成长</strong></p>
+            </div>
+        </div>
     </section>
 
-    <!-- AI 配音 -->
-    <section>
-      <h2 id="section-audio-title">🔊 AI 配音示例</h2>
-      <audio controls>
-        <source src="assets/sample-voice.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-    </section>
-  </main>
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Creative Lab. 持续更新中...</p>
+        </div>
+    </footer>
 
-  <script>
-    const content = {
-      zh: {
-        title: "Feng 创意实验室",
-        intro: "欢迎来到我的个人创作网站，这里记录我使用 Blender 的建模学习历程，展示我的 AI 作品、配音和互动内容。",
-        artTitle: "🎨 AI 图片作品",
-        artDesc: "这是一张我用 AI 生成的实验性图片，用于测试网站展示效果。",
-        logTitle: "📚 Blender 学习日志",
-        logContent: "2025/10/12：已经学了十几天动画人物建模了,可以把整体人物大概建模出来了,就是头发部分还没开始.",
-        audioTitle: "🔊 AI 配音示例"
-      },
-      en: {
-        title: "Feng Creative Lab",
-        intro: "Welcome to my personal creative site. Here I record my Blender modeling learning journey and showcase my AI artworks, voiceovers, and interactive content.",
-        artTitle: "🎨 AI Art Showcase",
-        artDesc: "This is an experimental AI-generated image to test the site layout.",
-        logTitle: "📚 Blender Learning Log",
-        logContent: "2025/10/12: First attempt at creating a basic cube and adding lights in Blender. Very fun!",
-        audioTitle: "🔊 AI Voice Sample"
-      }
-    };
-
-    function setLang(lang) {
-      document.getElementById("site-title").innerText = content[lang].title;
-      document.getElementById("intro-text").innerText = content[lang].intro;
-      document.getElementById("section-art-title").innerText = content[lang].artTitle;
-      document.getElementById("section-art-desc").innerText = content[lang].artDesc;
-      document.getElementById("section-log-title").innerText = content[lang].logTitle;
-      document.getElementById("section-log-content").innerText = content[lang].logContent;
-      document.getElementById("section-audio-title").innerText = content[lang].audioTitle;
-    }
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
