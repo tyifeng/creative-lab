@@ -1,64 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Feng's Creative Lab</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feng Creative Lab - 作品与学习日志</title>
   <style>
-    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-    .accent { color: #0b63d6; }
-    .card { background: white; border-radius: 12px; box-shadow: 0 6px 18px rgba(10,25,47,0.06); }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav button {
+      background: #444;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0 0.3rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    nav button:hover {
+      background: #666;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    h2 {
+      margin-top: 1.5rem;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.3rem;
+    }
+    audio {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
   </style>
 </head>
-<body class="bg-gradient-to-b from-sky-50 to-white text-slate-800">
-  <header class="max-w-4xl mx-auto py-8 px-6 flex items-center justify-between">
-    <div>
-      <a href="index.html" class="text-2xl font-semibold accent">Feng's Creative Lab</a>
-      <div class="text-sm text-slate-600">记录我在 AI 与 Blender 世界的探索 · Documenting my AI & Blender journey</div>
-    </div>
-    <nav class="space-x-4 text-slate-700">
-      <a href="index.html">首页 / Home</a>
-      <a href="blender-log.html">Blender 日志 / Log</a>
-      <a href="ai-gallery.html">作品 / Gallery</a>
-      <a href="ai-audio.html">配音 / Audio</a>
-      <a href="games.html">文字游戏 / Games</a>
-      <a href="about.html">关于 / About</a>
+<body>
+  <header>
+    <h1 id="site-title">Feng 创意实验室</h1>
+    <nav>
+      <button onclick="setLang('zh')">中文</button>
+      <button onclick="setLang('en')">English</button>
     </nav>
   </header>
-  <main class="max-w-4xl mx-auto px-6 pb-16">
-    <section class="card p-6 mb-6">
-      <h2 class="text-xl font-semibold accent">欢迎 / Welcome</h2>
-      <p class="mt-3 text-slate-700">这里是 Feng's Creative Lab。记录 Blender 建模练习、展示 AI 图片/动画、以及小型互动文字游戏。 / This is Feng's Creative Lab. Document Blender practice, show AI images/animations, and play small text games.</p>
+
+  <main>
+    <!-- 简介 -->
+    <section>
+      <p id="intro-text">
+        欢迎来到我的个人创作网站，这里记录我使用 Blender 的建模学习历程，展示我的 AI 作品、配音和互动内容。
+      </p>
     </section>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <a class="card p-4 hover:shadow-md" href="blender-log.html">
-        <h3 class="font-semibold">Blender 学习日志 / Blender Log</h3>
-        <p class="text-sm text-slate-600 mt-2">按项目记录建模、渲染与遇到的问题。/ Project-based notes on modeling, rendering and issues.</p>
-      </a>
-      <a class="card p-4 hover:shadow-md" href="ai-gallery.html">
-        <h3 class="font-semibold">AI 图片与动画 / AI Gallery</h3>
-        <p class="text-sm text-slate-600 mt-2">展示 AI 生成的图片和小动画示例。 / Showcase AI-generated images and small animations.</p>
-      </a>
-      <a class="card p-4 hover:shadow-md" href="ai-audio.html">
-        <h3 class="font-semibold">AI 配音 / AI Audio</h3>
-        <p class="text-sm text-slate-600 mt-2">上传并播放你生成的 AI 人声配音文件。 / Upload and play AI voice files.</p>
-      </a>
-      <a class="card p-4 hover:shadow-md" href="games.html">
-        <h3 class="font-semibold">互动文字游戏 / Text Games</h3>
-        <p class="text-sm text-slate-600 mt-2">简单的 HTML5 文字冒险，可直接在浏览器玩。 / Simple HTML5 text adventure playable in browser.</p>
-      </a>
+    <!-- AI 作品展示 -->
+    <section>
+      <h2 id="section-art-title">🎨 AI 图片作品</h2>
+      <img src="assets/sample-ai-art.jpg" alt="AI 作品示例">
+      <p id="section-art-desc">
+        这是一张我用 AI 生成的实验性图片，用于测试网站展示效果。
+      </p>
     </section>
 
-    <section class="mt-8 card p-6">
-      <h3 class="font-semibold">最近更新 / Recent Updates</h3>
-      <ul class="mt-3 space-y-2 text-slate-700">
-        <li>2025-10-11 — 新增示例文字游戏 / Added example text game</li>
-        <li>2025-10-11 — 上传示例动画与配音 / Uploaded sample animation and audio</li>
-      </ul>
+    <!-- 学习日志 -->
+    <section>
+      <h2 id="section-log-title">📚 Blender 学习日志</h2>
+      <p id="section-log-content">
+        2025/10/12：已经学了十几天动画人物建模了,可以把整体人物大概建模出来了,就是头发部分还没开始.
+      </p>
+    </section>
+
+    <!-- AI 配音 -->
+    <section>
+      <h2 id="section-audio-title">🔊 AI 配音示例</h2>
+      <audio controls>
+        <source src="assets/sample-voice.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
     </section>
   </main>
-  <footer class="max-w-4xl mx-auto px-6 py-6 text-sm text-slate-500">© Feng's Creative Lab · 联系 / Contact: your-email@example.com</footer>
+
+  <script>
+    const content = {
+      zh: {
+        title: "Feng 创意实验室",
+        intro: "欢迎来到我的个人创作网站，这里记录我使用 Blender 的建模学习历程，展示我的 AI 作品、配音和互动内容。",
+        artTitle: "🎨 AI 图片作品",
+        artDesc: "这是一张我用 AI 生成的实验性图片，用于测试网站展示效果。",
+        logTitle: "📚 Blender 学习日志",
+        logContent: "2025/10/12：已经学了十几天动画人物建模了,可以把整体人物大概建模出来了,就是头发部分还没开始.",
+        audioTitle: "🔊 AI 配音示例"
+      },
+      en: {
+        title: "Feng Creative Lab",
+        intro: "Welcome to my personal creative site. Here I record my Blender modeling learning journey and showcase my AI artworks, voiceovers, and interactive content.",
+        artTitle: "🎨 AI Art Showcase",
+        artDesc: "This is an experimental AI-generated image to test the site layout.",
+        logTitle: "📚 Blender Learning Log",
+        logContent: "2025/10/12: First attempt at creating a basic cube and adding lights in Blender. Very fun!",
+        audioTitle: "🔊 AI Voice Sample"
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById("site-title").innerText = content[lang].title;
+      document.getElementById("intro-text").innerText = content[lang].intro;
+      document.getElementById("section-art-title").innerText = content[lang].artTitle;
+      document.getElementById("section-art-desc").innerText = content[lang].artDesc;
+      document.getElementById("section-log-title").innerText = content[lang].logTitle;
+      document.getElementById("section-log-content").innerText = content[lang].logContent;
+      document.getElementById("section-audio-title").innerText = content[lang].audioTitle;
+    }
+  </script>
 </body>
 </html>
+
